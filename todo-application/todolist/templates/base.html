@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
     <link rel="stylesheet" href="{% static 'css/my_css.css' %}" >
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>{% block title %} {% endblock %}   </title>
     <style> {% block css %} {% endblock %}  </style>
@@ -17,18 +21,26 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="{% url 'home' %}">To-Do Application</a>
+  <!--a class="navbar-brand" href="{% url 'home' %}">To-Do Application</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button-->
+  <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid"
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'home' %}"><MARQUEE>To-Do Application</MARQUEE></a>
+            </div>
+        </div>
+    </nav>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
     </ul>
     <form class="form-inline my-2 my-lg-0" method="POST">
         {% csrf_token %}
-      <input class="form-control mr-sm-2" type="search" placeholder="Add Task To Perform" name="item" aria-label="Search">
-      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Add To List</button>
+     <center> <input class="form-control mr-sm-2" type="search" placeholder="Add Task To Perform" name="item" aria-label="Search">
+      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Add To List</button></center>
     </form>
   </div>
 </nav>
