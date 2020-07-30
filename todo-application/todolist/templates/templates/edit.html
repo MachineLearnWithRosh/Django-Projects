@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container">
+    {% if item %}
+
+<form class="form-inline my-8 my-lg-0" method="POST">
+        {% csrf_token %}
+      <div class="form-group">
+      <!--textarea class="form-control" type="search" placeholder="{{ item.item }}" value="{{ item.item }}"
+       aria-label="Search" name="item" wrap="physical" style="font-size:15pt;height:80px"></textarea-->
+
+      <textarea class="form-control my-4" value="{{ item.item }}" name="item" rows="3" cols="91"></textarea>
+
+      <input type="hidden" value="{{ item.completed }}" name="completed"><br>
+
+      <!--button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Edit Item</button-->
+
+      <button type="button mx-3" class="btn btn-dark">Edit Item</button>
+      </div>
+</form>
+
+{% endif %}
+</div>
+{% endblock %}
