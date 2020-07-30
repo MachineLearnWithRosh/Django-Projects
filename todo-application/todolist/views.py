@@ -7,6 +7,7 @@ from django.contrib import messages
 
 def home(request):
     all_items = ToDo.objects.all
+	#selecting all the items
 
     if request.method == "POST":
         form = ToDoForm(request.POST or None)
@@ -44,6 +45,7 @@ def uncross(request, task_id):
 def edit(request, task_id):
     if request.method == "POST":
         item = ToDo.objects.get(id=task_id)
+        print(item)
 
         form = ToDoForm(request.POST or None, instance=item)
 
